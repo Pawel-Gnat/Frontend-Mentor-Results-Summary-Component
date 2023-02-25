@@ -1,10 +1,11 @@
 import './App.css'
+import Results from './components/Results'
 
 function App() {
 	return (
-		<div className=''>
-			<h1 className=''>Hello world!</h1>
-		</div>
+		<main>
+			<Results />
+		</main>
 	)
 }
 
