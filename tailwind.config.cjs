@@ -16,8 +16,8 @@ module.exports = {
 
 				lightSlateBlueBbackground: 'hsl(252, 100%, 67%)',
 				lightRoyalBlueBackground: 'hsl(241, 81%, 54%)',
-				violetBlueCircle: 'hsla(256, 72%, 46%, 1)',
-				persianBlueCircle: 'hsla(241, 72%, 46%, 0)',
+				violetBlueCircle: 'hsla(256, 72%, 46%, 0)',
+				persianBlueCircle: 'hsla(241, 72%, 46%, 1)',
 			},
 		},
 	},

@@ -3,7 +3,7 @@ import Results from './components/Results'
 
 function App() {
 	return (
-		<main>
+		<main className='flex justify-center items-center min-h-screen'>
 			<Results />
 		</main>
 	)

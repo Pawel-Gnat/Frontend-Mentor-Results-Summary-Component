@@ -27,7 +27,16 @@ const Results = () => {
 
 	const calculatedResult = Math.round(data.reduce((acc, item) => acc + item.score, 0) / data.length)
 
-	return <>{(data.length > 0 && <ResultInfo result={calculatedResult} />, (<ResultItems data={data} />))}</>
+	return (
+		<>
+			{data.length > 0 && (
+				<section className='flex flex-col md:flex-row md:rounded-[3rem] md:shadow-xl'>
+					<ResultInfo result={calculatedResult} />
+					<ResultItems data={data} />
+				</section>
+			)}
+		</>
+	)
 }
 
 export default Results
