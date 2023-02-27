@@ -19,6 +19,18 @@ module.exports = {
 				violetBlueCircle: 'hsla(256, 72%, 46%, 0)',
 				persianBlueCircle: 'hsla(241, 72%, 46%, 1)',
 			},
+			keyframes: {
+				showLeft: {
+					'0%': { translate: '-200% 0%' },
+					'75%': { translate: '10% 0%' },
+					'100%': { translate: '0% 0%' },
+				},
+				showRight: {
+					'0%': { translate: '200% 0%' },
+					'75%': { translate: '-10% 0%' },
+					'100%': { translate: '0% 0%' },
+				},
+			},
 		},
 	},
 	plugins: [],

@@ -10,6 +10,7 @@ type Data = {
 
 const Results = () => {
 	const [data, setData] = useState<Data[]>([])
+	const [btn, setBtn] = useState(true)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -27,12 +28,22 @@ const Results = () => {
 
 	const calculatedResult = Math.round(data.reduce((acc, item) => acc + item.score, 0) / data.length)
 
+	const handleBtn = () => {
+		setBtn(false)
+	}
+
 	return (
 		<>
 			{data.length > 0 && (
-				<section className='flex flex-col md:flex-row md:rounded-[3rem] md:shadow-xl'>
-					<ResultInfo result={calculatedResult} />
-					<ResultItems data={data} />
+				<section className='flex flex-col md:flex-row md:rounded-[3rem] md:shadow-2xl'>
+					<ResultInfo
+						result={calculatedResult}
+						onStopCounter={handleBtn}
+					/>
+					<ResultItems
+						data={data}
+						btn={btn}
+					/>
 				</section>
 			)}
 		</>

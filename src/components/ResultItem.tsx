@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import useCounter from '../hooks/use-counter'
 
 type ResultItemProps = {
 	icon: string
@@ -9,15 +9,7 @@ type ResultItemProps = {
 }
 
 export default function ResultItem(props: ResultItemProps) {
-	const [counter, setCounter] = useState(0)
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCounter(prevCount => (prevCount < props.score ? prevCount + 1 : prevCount))
-		}, 50)
-
-		return () => clearInterval(interval)
-	}, [])
+	const counter = useCounter({ value: props.score, time: 50 })
 
 	return (
 		<div
