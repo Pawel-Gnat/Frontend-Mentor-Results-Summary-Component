@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import BtnContext from '../context/btn-context'
-import ResultInfo from './ResultInfo'
-import ResultItems from './ResultItems'
+import ResultInfo from '../components/ResultInfo'
+import SummaryContainer from '../components/SummaryContainer'
 
 type Data = {
 	category: string
@@ -42,7 +42,7 @@ const Results = () => {
 							result={calculatedResult}
 							onStopCounter={handleBtn}
 						/>
-						<ResultItems data={data} />
+						<SummaryContainer data={data} />
 					</section>
 				</BtnContext.Provider>
 			)}

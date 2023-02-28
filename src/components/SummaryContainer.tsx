@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import BtnContext from '../context/btn-context'
-import ResultItem from './ResultItem'
+import SummaryItem from './SummaryItem'
 
 type Props = {
 	data: {
@@ -10,7 +10,7 @@ type Props = {
 	}[]
 }
 
-const ResultItems = (props: Props) => {
+const SummaryContainer = (props: Props) => {
 	const [btnClass, setBtnClass] = useState('')
 
 	const ctx = useContext(BtnContext)
@@ -26,22 +26,22 @@ const ResultItems = (props: Props) => {
 	return (
 		<div className='w-full max-w-2xl p-12 md:w-[37rem] md:pt-14 md:pb-20'>
 			<h2 className='font-bold md:text-[2.4rem] md:mb-4'>Summary</h2>
-			<ResultItem
+			<SummaryItem
 				{...props.data[0]}
 				bgColor={'bg-lightRed'}
 				textColor={'text-lightRed'}
 			/>
-			<ResultItem
+			<SummaryItem
 				{...props.data[1]}
 				bgColor={'bg-orangeyYellow'}
 				textColor={'text-orangeyYellow'}
 			/>
-			<ResultItem
+			<SummaryItem
 				{...props.data[2]}
 				bgColor={'bg-greenTeal'}
 				textColor={'text-greenTeal'}
 			/>
-			<ResultItem
+			<SummaryItem
 				{...props.data[3]}
 				bgColor={'bg-cobaltBlue'}
 				textColor={'text-cobaltBlue'}
@@ -55,4 +55,4 @@ const ResultItems = (props: Props) => {
 	)
 }
 
-export default ResultItems
+export default SummaryContainer
