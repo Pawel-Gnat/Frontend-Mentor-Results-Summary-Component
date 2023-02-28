@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import BtnContext from '../context/btn-context'
-import ResultInfo from '../components/ResultInfo'
-import SummaryContainer from '../components/SummaryContainer'
+import BtnContext from 'context/btn-context'
+import ResultInfo from 'components/ResultInfo'
+import SummaryContainer from 'components/SummaryContainer'
 
 type Data = {
 	category: string

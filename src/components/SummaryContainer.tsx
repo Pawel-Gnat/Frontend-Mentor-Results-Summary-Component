@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import BtnContext from '../context/btn-context'
+import BtnContext from 'context/btn-context'
 import SummaryItem from './SummaryItem'
 
 type Props = {

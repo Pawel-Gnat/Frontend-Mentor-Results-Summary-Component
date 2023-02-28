@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useCounter from '../hooks/use-counter'
+import useCounter from 'hooks/use-counter'
 interface ResultInfoProps {
 	result: number
 	onStopCounter: () => void
