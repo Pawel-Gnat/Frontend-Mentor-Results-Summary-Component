@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import BtnContext from '../context/btn-context'
 import ResultInfo from './ResultInfo'
 import ResultItems from './ResultItems'
 
@@ -35,16 +36,15 @@ const Results = () => {
 	return (
 		<>
 			{data.length > 0 && (
-				<section className='flex flex-col md:flex-row md:rounded-[3rem] md:shadow-2xl'>
-					<ResultInfo
-						result={calculatedResult}
-						onStopCounter={handleBtn}
-					/>
-					<ResultItems
-						data={data}
-						btn={btn}
-					/>
-				</section>
+				<BtnContext.Provider value={{ isDisabled: btn }}>
+					<section className='flex flex-col md:flex-row md:rounded-[3rem] md:shadow-2xl'>
+						<ResultInfo
+							result={calculatedResult}
+							onStopCounter={handleBtn}
+						/>
+						<ResultItems data={data} />
+					</section>
+				</BtnContext.Provider>
 			)}
 		</>
 	)

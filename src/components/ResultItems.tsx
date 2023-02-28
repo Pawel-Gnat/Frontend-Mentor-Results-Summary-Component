@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import BtnContext from '../context/btn-context'
 import ResultItem from './ResultItem'
 
 type Props = {
@@ -7,19 +8,20 @@ type Props = {
 		category: string
 		score: number
 	}[]
-	btn: boolean
 }
 
 const ResultItems = (props: Props) => {
 	const [btnClass, setBtnClass] = useState('')
 
+	const ctx = useContext(BtnContext)
+
 	useEffect(() => {
-		if (props.btn === false) {
+		if (ctx.isDisabled === false) {
 			setBtnClass(
 				'border-none bg-darkGrayBlue hover:bg-gradient-to-b from-lightSlateBlueBbackground to-lightRoyalBlueBackground text-white'
 			)
 		}
-	}, [props.btn])
+	}, [ctx.isDisabled])
 
 	return (
 		<div className='w-full max-w-2xl p-12 md:w-[37rem] md:pt-14 md:pb-20'>
@@ -45,7 +47,7 @@ const ResultItems = (props: Props) => {
 				textColor={'text-cobaltBlue'}
 			/>
 			<button
-				disabled={props.btn}
+				disabled={ctx.isDisabled}
 				className={`w-full text-center py-6 mt-2 border rounded-[100vh] text-lightLavender md:mt-10 ${btnClass}`}>
 				Continue
 			</button>
