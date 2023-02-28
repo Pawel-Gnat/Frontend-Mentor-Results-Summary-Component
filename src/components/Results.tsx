@@ -15,7 +15,7 @@ const Results = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch('./src/data.json')
+				const response = await fetch('./data.json')
 				const data: Data[] = await response.json()
 				setData(data)
 			} catch (error) {
